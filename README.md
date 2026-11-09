@@ -257,7 +257,10 @@ math-study/
 │  ├─ categories.md
 │  ├─ comparison-matrix.md
 │  ├─ technology-system-matrix.md
-│  └─ representation-taxonomy.md
+│  ├─ representation-taxonomy.md
+│  ├─ service-analysis-schema.md
+│  ├─ service-catalog.md
+│  └─ code-pattern-map.md
 ├─ services/
 │  ├─ algeomath-kids/
 │  ├─ geogebra/
@@ -285,7 +288,14 @@ math-study/
 │     ├─ scene-graph.ts
 │     ├─ linked-dataset.ts
 │     ├─ lesson-orchestrator.ts
-│     └─ serialization.ts
+│     ├─ serialization.ts
+│     └─ examples/
+│        ├─ dynamic-geometry-demo.ts
+│        ├─ manipulative-demo.ts
+│        ├─ algebra-rewrite-demo.ts
+│        ├─ linked-data-demo.ts
+│        ├─ reactive-simulation-demo.ts
+│        └─ classroom-demo.ts
 ├─ patterns/
 │  └─ math-interaction-patterns.md
 └─ backlog/
