@@ -31,6 +31,10 @@ storytold/craft-anything의 Study → Build → Check 사고방식을 참고하�
 - [수학 표현 방식 분류](docs/representation-taxonomy.md)
 - [전체 비교표](docs/comparison-matrix.md)
 - [공통 인터랙션 패턴](patterns/math-interaction-patterns.md)
+- [서비스별 분석 스키마](docs/service-analysis-schema.md)
+- [앱·서비스별 분류 카탈로그](docs/service-catalog.md)
+- [서비스 → 구현 코드 패턴 맵](docs/code-pattern-map.md)
+- [클린룸 TypeScript 구현](reference-implementations/README.md)
 
 ---
 
@@ -137,7 +141,56 @@ storytold/craft-anything의 Study → Build → Check 사고방식을 참고하�
 
 ---
 
-# 3. 근거 등급
+# 3. 서비스별 심층 문서
+
+각 서비스 폴더는 이제 다음 구조를 사용합니다.
+
+~~~text
+services/<service>/
+├─ README.md                  # UI/UX·기능·교육적 분석
+├─ classification.md          # 앱 자체의 기술/상태/표현/수업 분류
+└─ implementation-reference.md # 실제 코드 경로 + 클린룸 구현 설계
+~~~
+
+| 서비스 | 분류 | 구현 분석 |
+|---|---|---|
+| 알지오매스 키즈 | [분류](services/algeomath-kids/classification.md) | [구현](services/algeomath-kids/implementation-reference.md) |
+| GeoGebra | [분류](services/geogebra/classification.md) | [구현](services/geogebra/implementation-reference.md) |
+| Desmos | [분류](services/desmos/classification.md) | [구현](services/desmos/implementation-reference.md) |
+| Mathigon Polypad | [분류](services/mathigon-polypad/classification.md) | [구현](services/mathigon-polypad/implementation-reference.md) |
+| PhET | [분류](services/phet/classification.md) | [구현](services/phet/implementation-reference.md) |
+| Graspable Math | [분류](services/graspable-math/classification.md) | [구현](services/graspable-math/implementation-reference.md) |
+| Math Learning Center | [분류](services/math-learning-center/classification.md) | [구현](services/math-learning-center/implementation-reference.md) |
+| CODAP | [분류](services/codap/classification.md) | [구현](services/codap/implementation-reference.md) |
+| Cabri Express | [분류](services/cabri-express/classification.md) | [구현](services/cabri-express/implementation-reference.md) |
+| Brainingcamp | [분류](services/brainingcamp/classification.md) | [구현](services/brainingcamp/implementation-reference.md) |
+| Amplify Classroom | [분류](services/amplify-classroom/classification.md) | [구현](services/amplify-classroom/implementation-reference.md) |
+| Didax | [분류](services/didax/classification.md) | [구현](services/didax/implementation-reference.md) |
+| Toy Theater | [분류](services/toy-theater/classification.md) | [구현](services/toy-theater/implementation-reference.md) |
+
+## 실제 구현용 코드
+
+`reference-implementations/`에는 분석 결과를 그대로 새 서비스 설계에 옮길 수 있도록 독립 TypeScript 코드를 둡니다.
+
+~~~text
+dependency-graph.ts       # 동적 기하
+tool-state-machine.ts     # 작도 도구
+history.ts                # 의미 단위 Undo/Redo
+tile-document.ts          # 가상교구 문서
+manipulative-registry.ts  # 교구 플러그인
+rewrite-engine.ts         # 대수식 변환
+reactive-property.ts      # 시뮬레이션 반응형 상태
+scene-graph.ts            # 2D/3D 장면 그래프
+linked-dataset.ts         # 통계 linked views
+lesson-orchestrator.ts    # 실시간 수업
+serialization.ts          # 버전/마이그레이션
+~~~
+
+원본 서비스를 복제한 코드가 아니라, 공개 구조와 관찰 가능한 동작을 바탕으로 만든 **clean-room reference implementation**입니다.
+
+---
+
+# 4. 근거 등급
 
 - **[VERIFIED-UI]** 공식 사이트/매뉴얼/도움말에서 직접 확인
 - **[VERIFIED-SOURCE]** 공식 또는 명확한 공개 소스에서 직접 확인
@@ -149,7 +202,7 @@ storytold/craft-anything의 Study → Build → Check 사고방식을 참고하�
 
 ---
 
-# 4. 가장 중요한 비교축
+# 5. 가장 중요한 비교축
 
 ## 수학 상태 모델
 
@@ -194,7 +247,7 @@ one math/data state
 
 ---
 
-# 5. 저장소 구조
+# 6. 저장소 구조
 
 ~~~text
 math-study/
@@ -219,6 +272,20 @@ math-study/
 │  ├─ amplify-classroom/
 │  ├─ didax/
 │  └─ toy-theater/
+├─ reference-implementations/
+│  ├─ README.md
+│  └─ src/
+│     ├─ dependency-graph.ts
+│     ├─ history.ts
+│     ├─ tool-state-machine.ts
+│     ├─ tile-document.ts
+│     ├─ manipulative-registry.ts
+│     ├─ rewrite-engine.ts
+│     ├─ reactive-property.ts
+│     ├─ scene-graph.ts
+│     ├─ linked-dataset.ts
+│     ├─ lesson-orchestrator.ts
+│     └─ serialization.ts
 ├─ patterns/
 │  └─ math-interaction-patterns.md
 └─ backlog/
@@ -227,7 +294,7 @@ math-study/
 
 ---
 
-# 6. 서비스 하나를 분석할 때 확인하는 항목
+# 7. 서비스 하나를 분석할 때 확인하는 항목
 
 1. 역할과 대상 학습자
 2. 페이지/화면 지도
@@ -254,7 +321,7 @@ math-study/
 
 ---
 
-# 7. 설계에서 우선적으로 가져올 패턴
+# 8. 설계에서 우선적으로 가져올 패턴
 
 - **Math Object와 Representation 분리**
 - **Dependency Graph**
@@ -276,7 +343,7 @@ math-study/
 
 ---
 
-# 8. 다음 분석 후보
+# 9. 다음 분석 후보
 
 [backlog/candidates.md](backlog/candidates.md)에 분야별로 정리합니다.
 
