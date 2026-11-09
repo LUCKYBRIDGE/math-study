@@ -1,57 +1,210 @@
 # math-study
 
-수학 교육용 웹·앱·도구를 **화면, UI/UX, 수학적 상호작용, 상태 모델, 기술 구조, 공개 소스 구조**까지 분석해 축적하는 저장소입니다.
+수학 교육용 웹·앱·도구를 **수학 모델, 기술 구조, 시스템, UI/UX, 표현 방식, 수업 활용 구조**까지 정밀 분석해 축적하는 저장소입니다.
 
-이 저장소의 목적은 서비스 소개가 아니라 다음 질문에 답하는 것입니다.
+단순 서비스 소개가 아니라 아래 질문에 답하는 것이 목적입니다.
 
 - 수학 원리를 어떤 **조작 가능한 객체**로 바꾸었는가?
-- 사용자의 클릭·드래그·입력·선택을 어떤 **수학 연산/관계**로 해석하는가?
-- 수학 객체의 상태와 화면 표현을 어떻게 연결하는가?
-- 여러 표현(식·그래프·도형·수모형·표·3D)을 어떻게 동기화하는가?
-- 교사용 수업 흐름, 공유, 과제, 저장을 어떻게 연결하는가?
-- 공개 저장소가 있다면 실제 **상·하위 폴더와 파일**은 어떻게 역할을 나누는가?
+- 사용자의 클릭·드래그·입력을 어떤 **수학 연산**으로 해석하는가?
+- 어떤 **상태 모델**을 중심으로 화면을 구성하는가?
+- 식·그래프·표·도형·조작물·3D·소리를 어떻게 연결하는가?
+- Undo/Redo, 저장, 공유, 과제, 협업은 어떻게 수학 상태와 연결되는가?
+- 공개 소스가 있다면 실제 폴더·파일 구조는 어떻게 책임을 나누는가?
 - 비공개 서비스라면 어디까지가 확인된 사실이고 어디부터가 추정인가?
-- 다른 교육용 수학 서비스를 만들 때 무엇을 가져오고 무엇은 피해야 하는가?
+- 신규 수학 서비스를 설계할 때 무엇을 가져오고 무엇을 피해야 하는가?
 
-## 분석 원칙
+---
 
-storytold/craft-anything의 Study → Build → Check 사고방식을 참고하되, 이 저장소에서는 **Study → Model → Compare → Extract**로 사용합니다.
+## 분석 방법
 
-1. **Study**: 공식 사이트·매뉴얼·도움말·공개 저장소를 조사
-2. **Model**: 화면 → 행동 → 상태변화 → 수학 의미 → 데이터 구조 순으로 재구성
-3. **Compare**: 같은 수학 개념을 서비스마다 어떻게 다르게 풀었는지 비교
-4. **Extract**: 재사용 가능한 UI/UX·아키텍처 패턴과 실패 가능성을 추출
+storytold/craft-anything의 Study → Build → Check 사고방식을 참고하되 이 저장소에서는 다음 흐름으로 사용합니다.
 
-### 근거 등급
+1. **Study** — 공식 사이트, 도움말, 매뉴얼, 공개 저장소, 현재 동작 확인
+2. **Model** — 화면 → 행동 → 상태 변화 → 수학 의미 → 데이터 구조로 재구성
+3. **Compare** — 같은 개념을 서비스마다 어떻게 다르게 풀었는지 비교
+4. **Extract** — 재사용 가능한 UI/UX·아키텍처·수학 인터랙션 패턴 추출
+
+자세한 기준:
+- [분석 방법](docs/analysis-method.md)
+- [수학 교육 앱 분류 체계](docs/categories.md)
+- [기술·시스템 비교](docs/technology-system-matrix.md)
+- [수학 표현 방식 분류](docs/representation-taxonomy.md)
+- [전체 비교표](docs/comparison-matrix.md)
+- [공통 인터랙션 패턴](patterns/math-interaction-patterns.md)
+
+---
+
+# 1. 서비스 분류
+
+## A. 동적 기하·다중 표현
+
+- [알지오매스 키즈](services/algeomath-kids/README.md)
+- [GeoGebra](services/geogebra/README.md)
+- [Cabri Express](services/cabri-express/README.md)
+- [Desmos](services/desmos/README.md)
+
+핵심:
+- Math Object
+- Dependency Graph
+- Construction
+- Transformation
+- 2D/3D
+- 식/그래프/측정 연동
+
+## B. 가상 수학 교구·조작물
+
+- [Mathigon Polypad](services/mathigon-polypad/README.md)
+- [Math Learning Center](services/math-learning-center/README.md)
+- [Brainingcamp](services/brainingcamp/README.md)
+- [Didax Virtual Manipulatives](services/didax/README.md)
+- [Toy Theater](services/toy-theater/README.md)
+
+핵심:
+- Manipulative-first
+- Tile/Object Registry
+- Workspace
+- Semantic Merge/Split
+- Drag/Drop
+- 초등 수모형
+
+## C. 시뮬레이션·마이크로월드
+
+- [PhET Math](services/phet/README.md)
+
+핵심:
+- 개념별 domain model
+- 최소 UI
+- 원인-결과 변화
+- animation
+- multimodal feedback
+
+## D. 대수 직접조작
+
+- [Graspable Math](services/graspable-math/README.md)
+
+핵심:
+- Expression Tree
+- Gesture
+- Legal Transform
+- Rewrite Rule
+- Derivation History
+
+## E. 데이터·통계 탐구
+
+- [CODAP](services/codap/README.md)
+
+핵심:
+- Shared Dataset
+- Case Identity
+- Table/Graph/Map 연결
+- Brushing and Linking
+- Plugin API
+
+## F. 수업 제작·실시간 오케스트레이션
+
+- [Amplify Classroom](services/amplify-classroom/README.md)
+- 알지오 모둠
+- GeoGebra Classroom
+- Brainingcamp LIVE
+
+핵심:
+- Lesson Screen
+- Teacher Dashboard
+- Student Response
+- Pacing
+- Snapshot
+- Select & Sequence
+
+---
+
+# 2. 현재 분석 서비스
+
+| 서비스 | 주 유형 | 기술 공개성 | 가장 중요한 분석 포인트 |
+|---|---|---|---|
+| 알지오매스 키즈 | 동적 기하/3D/수업 | 내부 비공개 | 초등 교육과정형 도구 + 2D/3D/문서/모둠 |
+| GeoGebra | 동적 수학 엔진 | 높음 | GeoElement, Kernel, Dependency Graph |
+| Desmos | 그래프/표현식 | 핵심 비공개 | Expression → Graph, Geometry Token |
+| Polypad | 가상교구 | API 공개 | Tile/Stroke JSON, Viewport 분리, Embed |
+| PhET | 시뮬레이션 | 현행 내부 제한 | 개념별 micro-world, SceneryStack |
+| Graspable Math | 대수 직접조작 | 핵심 비공개 | Gesture → Legal Algebra Transform |
+| Math Learning Center | 가상교구 | 핵심 비공개 | 물리교구 디지털화, short share code |
+| CODAP | 데이터/통계 | 높음 | Shared Dataset, Linked Views, Plugin |
+| Cabri Express | 동적 수학 | 핵심 비공개 | Geometry + Graph + 3D + Equation 통합 |
+| Brainingcamp | 가상교구/수업 | 핵심 비공개 | Common Manipulative Shell + LIVE |
+| Amplify Classroom | 수업 플랫폼 | 핵심 비공개 | Lesson Screens + Teacher Orchestration |
+| Didax | micro manipulative | 핵심 비공개 | HTML5 단일 개념 교구 |
+| Toy Theater | 저학년 교구 | 핵심 비공개 | 최소 UI, 강한 시각 affordance |
+
+---
+
+# 3. 근거 등급
 
 - **[VERIFIED-UI]** 공식 사이트/매뉴얼/도움말에서 직접 확인
-- **[VERIFIED-SOURCE]** 공식 또는 명확한 공개 소스 저장소에서 직접 확인
+- **[VERIFIED-SOURCE]** 공식 또는 명확한 공개 소스에서 직접 확인
 - **[HISTORICAL-SOURCE]** 과거 공개 소스이며 현재 구조와 다를 수 있음
-- **[INFERRED]** 화면·API·행동으로부터 합리적으로 추정한 내부 구조
+- **[INFERRED]** 화면·API·행동으로부터 재구성한 합리적 추정
 - **[UNKNOWN]** 공개 근거가 없어 판단 보류
 
-비공개 서비스의 폴더·파일 구조를 실제 구조처럼 만들어 적지 않습니다.
+비공개 서비스는 실제 폴더/파일 구조처럼 보이는 가짜 구조를 만들지 않습니다.
 
-## 현재 분석 대상
+---
 
-| 서비스 | 핵심 관점 | 공개 소스 |
-|---|---|---|
-| [알지오매스 키즈](services/algeomath-kids/README.md) | 초등 2D/3D/문서/모둠 통합 | 확인되지 않음 |
-| [GeoGebra](services/geogebra/README.md) | 동적 수학 객체·의존성 그래프·다중 표현 | 공개 |
-| [Desmos](services/desmos/README.md) | 식 목록 중심 그래프/기하 인터페이스 | 핵심 앱 비공개 |
-| [Mathigon Polypad](services/mathigon-polypad/README.md) | 가상 수학 교구·타일 문서 모델 | API 공개 |
-| [PhET Math](services/phet/README.md) | 개념별 시뮬레이션·다중감각 피드백 | 현재 공개 소스 제한 |
-| [Graspable Math](services/graspable-math/README.md) | 수식을 직접 잡고 움직이는 대수 조작 | 핵심 앱 비공개 |
-| [Math Learning Center](services/math-learning-center/README.md) | 초등 수모형·가상교구·공유 코드 | 핵심 앱 비공개 |
+# 4. 가장 중요한 비교축
 
-## 저장소 구조
+## 수학 상태 모델
+
+~~~text
+GeoGebra        → Object Dependency Graph
+Desmos          → Expression State
+Polypad         → Tile/Stroke Document
+PhET            → Simulation Domain Model
+Graspable Math  → Expression Tree + Rewrite
+CODAP           → Shared Dataset + Linked Views
+Amplify         → Lesson Screen + Student Response
+~~~
+
+이 차이가 UI, Undo, 저장, 공유, 평가 구조를 거의 결정합니다.
+
+## 인터랙션 문법
+
+| 문법 | 대표 |
+|---|---|
+| Tool-first | 알지오, GeoGebra, Cabri |
+| Expression-first | Desmos |
+| Manipulative-first | Polypad, MLC, Brainingcamp, Didax |
+| Simulation-first | PhET |
+| Gesture-first | Graspable Math |
+| Attribute-drag | CODAP |
+| Lesson-screen-first | Amplify Classroom |
+
+## 표현 연결 수준
+
+가장 중요한 목표는 단순히 여러 표현을 보여주는 것이 아니라 **같은 수학 객체/데이터 identity를 공유하는 것**입니다.
+
+~~~text
+one math/data state
+   ├─ formula
+   ├─ graph
+   ├─ table
+   ├─ geometry
+   ├─ map
+   ├─ manipulative
+   └─ accessible representation
+~~~
+
+---
+
+# 5. 저장소 구조
 
 ~~~text
 math-study/
 ├─ README.md
 ├─ docs/
 │  ├─ analysis-method.md
-│  └─ comparison-matrix.md
+│  ├─ categories.md
+│  ├─ comparison-matrix.md
+│  ├─ technology-system-matrix.md
+│  └─ representation-taxonomy.md
 ├─ services/
 │  ├─ algeomath-kids/
 │  ├─ geogebra/
@@ -59,37 +212,79 @@ math-study/
 │  ├─ mathigon-polypad/
 │  ├─ phet/
 │  ├─ graspable-math/
-│  └─ math-learning-center/
+│  ├─ math-learning-center/
+│  ├─ codap/
+│  ├─ cabri-express/
+│  ├─ brainingcamp/
+│  ├─ amplify-classroom/
+│  ├─ didax/
+│  └─ toy-theater/
 ├─ patterns/
 │  └─ math-interaction-patterns.md
 └─ backlog/
    └─ candidates.md
 ~~~
 
-## 분석 문서 공통 틀
+---
 
-각 서비스 문서는 가능한 범위에서 다음 순서를 사용합니다.
+# 6. 서비스 하나를 분석할 때 확인하는 항목
 
-1. 서비스 역할과 대상 학습자
-2. 페이지·화면 구조
-3. 주요 UI 컴포넌트와 버튼
+1. 역할과 대상 학습자
+2. 페이지/화면 지도
+3. UI 영역과 버튼
 4. 핵심 사용자 흐름
-5. 수학 개념을 화면 조작으로 바꾸는 방식
-6. 객체·상태·연산 모델
-7. 선택/드래그/스냅/제약/피드백
-8. Undo/Redo와 이력
-9. 저장·공유·수업/과제 연동
-10. 접근성
-11. 기술 스택
-12. 공개 소스의 실제 폴더·파일 구조
-13. 장점과 구조적 한계
-14. 재사용할 설계 패턴
-15. 추가 검증이 필요한 항목
-16. 출처
+5. 수학 표현 방식
+6. 수학 객체/상태 모델
+7. 입력 제스처
+8. 제약/스냅/검증
+9. 피드백/애니메이션
+10. Undo/Redo
+11. 저장/직렬화
+12. 공유
+13. 교사/학생 시스템
+14. 접근성
+15. 렌더링
+16. 상태관리
+17. 공개 API
+18. 실제 소스 폴더/파일
+19. 테스트 전략
+20. 장점/한계
+21. 재사용할 패턴
+22. 추가 검증 항목
 
-## 먼저 볼 문서
+---
 
-- 전체 차이: [docs/comparison-matrix.md](docs/comparison-matrix.md)
-- 분석 기준: [docs/analysis-method.md](docs/analysis-method.md)
-- 공통 설계 패턴: [patterns/math-interaction-patterns.md](patterns/math-interaction-patterns.md)
-- 추가 분석 후보: [backlog/candidates.md](backlog/candidates.md)
+# 7. 설계에서 우선적으로 가져올 패턴
+
+- **Math Object와 Representation 분리**
+- **Dependency Graph**
+- **Tool State Machine**
+- **Gesture → Semantic Operation**
+- **Semantic Snapping**
+- **Multiple Representations, One Source of Truth**
+- **Tile/Stroke Document**
+- **Simulation-specific Screen**
+- **Shared Dataset + Linked Selection**
+- **Lesson Shell + Specialized Math Widgets**
+- **Command/Meaning-based History**
+- **Document / Viewport / Preference / Session State 분리**
+- **짧은 공유 코드**
+- **교사 template → 학생 copy → submission**
+- **Keyboard/Screen Reader/Sonification을 별도 표현으로 설계**
+
+자세한 내용은 [공통 인터랙션 패턴](patterns/math-interaction-patterns.md)을 참고합니다.
+
+---
+
+# 8. 다음 분석 후보
+
+[backlog/candidates.md](backlog/candidates.md)에 분야별로 정리합니다.
+
+다음 우선순위는 현재 빈 축을 채우는 방향으로 둡니다.
+
+- 적응형 연습/마스터리
+- 게임 기반 수학 개념 학습
+- 문제 탐구형 콘텐츠
+- AI 풀이/튜터
+- 수학 증명/논증
+- 공간감각 특화 앱
