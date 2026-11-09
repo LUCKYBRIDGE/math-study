@@ -1,135 +1,220 @@
-# 수학 교육 도구 비교 매트릭스
+# 수학 교육 도구 전체 비교 매트릭스
 
-> 2026-11 조사 기준. 서비스별 상세 근거는 각 문서에 분리합니다.
+> 2026-11 기준. 상세 근거는 각 서비스 문서에 분리합니다.
 
-## 1. 한눈에 보는 설계 철학
+## 1. 수학 모델 비교
 
-| 서비스 | 핵심 인터랙션 문법 | 중심 데이터/객체 | 교육적 강점 | 구조적 특징 |
-|---|---|---|---|---|
-| 알지오매스 키즈 | 도구 선택 → 객체 선택/생성 | 2D/3D 수학 객체 + 문서 + 모둠 콘텐츠 | 초등 교육과정 친화, 2D~과제까지 한 흐름 | 종합형 |
-| GeoGebra | 객체·식 생성 → 의존 객체 자동 갱신 | GeoElement + dependency graph | 동적 기하와 대수 표현 연결 | 수학 엔진 중심 |
-| Desmos | 식 입력 ↔ 그래프 직접 조작 | expression + visual objects | 식과 그래프 관계 탐색 | 표현식 중심 |
-| Polypad | 교구 타일 drag/drop + 도구 | Tile + Stroke JSON document | 구체물→시각 모델 연결 | 문서/캔버스 중심 |
-| PhET | 매개변수 조작 → 시뮬레이션 관찰 | 시뮬레이션별 domain model | 개념 관계와 변화 탐구 | 개별 시뮬레이션 중심 |
-| Graspable Math | 수식 기호 직접 drag/click | expression tree + legal transforms | 대수 규칙을 몸짓으로 경험 | rewrite/gesture 중심 |
-| Math Learning Center | 가상교구 직접조작 | 수모형/조작물 객체 | 초등 수감각·표상·설명 | 조작물 중심 |
+| 서비스 | 내부적으로 가장 중요한 개념 | 사용자가 직접 만지는 것 |
+|---|---|---|
+| 알지오매스 키즈 | 기하 객체·변환·3D 객체 | 점/선/도형/입체 |
+| GeoGebra | GeoElement + dependency | 객체와 식 |
+| Desmos | expression state | 식/그래프 |
+| Polypad | tile/stroke document | 수학 교구 |
+| PhET | simulation domain state | 개념별 물체/조절기 |
+| Graspable Math | expression tree + rewrite | 식의 항/기호 |
+| MLC | manipulative model | 수모형 |
+| CODAP | dataset/case/attribute | 데이터/변수 |
+| Cabri Express | dynamic construction | 도형/식/그래프 |
+| Brainingcamp | manipulative workspace | 교구 객체 |
+| Amplify Classroom | lesson screen/response | 수업 화면/응답 |
+| Didax | single manipulative state | 단일 교구 |
+| Toy Theater | visual manipulative | 시각 교구 |
 
-## 2. 기본 진입점의 추상도
+## 2. 핵심 인터랙션 문법
+
+| 서비스 | 조작 문법 |
+|---|---|
+| 알지오 | 도구 선택 → 대상 선택 → 생성 |
+| GeoGebra | 객체/명령 생성 → 관계 유지 |
+| Desmos | 식 입력 → 즉시 표현 |
+| Polypad | 교구 drag/drop → 조합 |
+| PhET | 변수/물체 조작 → 현상 관찰 |
+| Graspable | 기호 drag/click → 대수 변환 |
+| MLC | 수모형 직접조작 |
+| CODAP | attribute drag → 표현 구성 |
+| Cabri | construction → direct manipulation |
+| Brainingcamp | toolkit/bin → workspace |
+| Amplify | screen → student response → teacher orchestration |
+| Didax | 교구 선택 → 즉시 조작 |
+| Toy Theater | see → touch → move |
+
+## 3. 표현 방식
+
+| 서비스 | 주요 표현 |
+|---|---|
+| 알지오 | 2D, 3D, 측정, 문서 |
+| GeoGebra | 식, 그래프, 기하, 표, 3D |
+| Desmos | 식, 그래프, 표, Geometry, 3D, Audio |
+| Polypad | 교구, 그림, 수식, 텍스트, 입체 |
+| PhET | animated simulation |
+| Graspable | 동적 수식 |
+| MLC | 수모형 |
+| CODAP | table, graph, map, card |
+| Cabri | 기하, 그래프, 3D, 식 |
+| Brainingcamp | 교구 + 주석 |
+| Amplify | lesson screen + embedded math widget |
+| Didax | 개별 교구 |
+| Toy Theater | 저학년 visual model |
+
+## 4. 기술 공개성
+
+| 서비스 | 공개성 | 기술 분석 깊이 |
+|---|---:|---:|
+| GeoGebra | 높음 | 매우 높음 |
+| CODAP | 높음 | 매우 높음 |
+| Polypad | API 공개 | 높음 |
+| PhET | 현행 core 제한 | 중간 |
+| Desmos | core 비공개 | 중간 이하 |
+| Brainingcamp | 비공개 | 중간 이하 |
+| Didax | 비공개 | 중간 이하 |
+| Cabri | 비공개 | 중간 이하 |
+| MLC | 비공개 | 중간 이하 |
+| Graspable | 비공개 | 중간 이하 |
+| Amplify | 비공개 | UI/System 중심 |
+| 알지오 | 비공개 | UI/System 중심 |
+| Toy Theater | 비공개 | UX 중심 |
+
+## 5. 확인된 기술
+
+| 서비스 | 확인된 기술/구조 |
+|---|---|
+| GeoGebra | Java shared kernel, Web/Desktop modules, 2D/3D view 계층 |
+| CODAP v3 | React, TypeScript, MobX State Tree, D3, PixiJS, Leaflet, dnd-kit, Jest, Cypress |
+| Polypad | JavaScript API, Web Components, Web Animations, JSON serialization |
+| PhET | HTML5, SceneryStack 공식 접근성 구조 |
+| Brainingcamp | Canvas-based workspace |
+| Didax | HTML5 + JavaScript |
+| Cabri Express | browser based, 2D/3D/graph/equation integrated |
+| 나머지 | 공개 근거 범위까지만 기록 |
+
+## 6. 화면 복잡도와 진입장벽
+
+| 서비스 | 초기 복잡도 | 초등 직접 사용 |
+|---|---:|---:|
+| Toy Theater | 매우 낮음 | 매우 높음 |
+| Didax | 낮음 | 매우 높음 |
+| MLC | 낮음 | 높음 |
+| Brainingcamp | 낮음~중간 | 높음 |
+| Polypad | 중간 | 높음~중간 |
+| PhET | 개념별 낮음 | 높음 |
+| 알지오 | 중간 | 중간~높음 |
+| Amplify | 학생 낮음 / 교사 중간 | 높음 |
+| Cabri | 중간 | 중간 |
+| Desmos | 중간 | 중간 이하 |
+| GeoGebra Classic | 높음 | 낮음 |
+| Graspable | 중간 | 중간 이하 |
+| CODAP | 중간 | 5학년 이상 적합 |
+
+## 7. 개방형 탐구 ↔ 정답형
 
 ~~~text
-구체적 조작물
-MLC ─ Polypad ─ PhET ─ Algeo Kids ─ GeoGebra ─ Desmos ─ Graspable Math
-                                                              추상 기호
+개방형 탐구
+Polypad ─ GeoGebra ─ CODAP ─ PhET ─ MLC/Brainingcamp ─ Graspable ─ 연습 플랫폼
+                                                              정답 지향
 ~~~
 
-정확한 우열이 아니라 기본 진입점의 차이입니다.
+이는 절대적 순위가 아니라 기본 사용 흐름의 성격입니다.
 
-- **MLC / Polypad**: 먼저 만지고 배치합니다.
-- **PhET**: 먼저 변화시켜 봅니다.
-- **알지오매스 키즈**: 수학 도구를 선택하고 객체를 만듭니다.
-- **GeoGebra**: 수학 객체의 관계망을 만듭니다.
-- **Desmos**: 식을 써서 표현을 생성합니다.
-- **Graspable Math**: 기호 자체를 물체처럼 조작합니다.
+## 8. 표현 연결 강도
 
-## 3. 화면 복잡도
+### 매우 강함
+- GeoGebra
+- CODAP
+- Desmos
 
-| 서비스 | 초기 화면 복잡도 | 점진적 공개 | 초등 저학년 직접 사용 |
-|---|---:|---:|---:|
-| MLC | 낮음 | 높음 | 높음 |
-| Polypad | 중간 | 높음 | 높음~중간 |
-| PhET | 낮음~중간 | 시뮬레이션별 | 높음~중간 |
-| 알지오매스 키즈 | 중간 | 도구 묶음 | 중간 |
-| Desmos Graphing | 중간 | 식 목록 기반 | 낮음~중간 |
-| GeoGebra Classic | 높음 | 앱별로 완화 가능 | 낮음 |
-| Graspable Math | 중간 | 제스처 학습 필요 | 낮음~중간 |
+이들은 하나의 상태/identity가 여러 표현에서 공유됩니다.
 
-## 4. 수학적 제약을 UI에 넣는 방식
+### 중간
+- 알지오
+- Cabri
+- Polypad
+- PhET
 
-### 알지오매스 키즈
-'대상 위의 점', '중간 위치의 점', 정삼각형·직각삼각형 같은 **의미가 붙은 생성 도구**를 제공합니다. 학생은 자유 좌표를 입력하기보다 수학적 관계를 가진 객체를 만듭니다.
+다중 표현을 제공하지만 서비스/활동에 따라 연결 강도가 달라집니다.
 
-### GeoGebra
-객체가 다른 객체를 참조하는 **동적 의존성 그래프**가 핵심입니다. 부모 객체가 변하면 파생 객체가 재계산됩니다.
+### 조작물 중심
+- MLC
+- Brainingcamp
+- Didax
+- Toy Theater
 
-### Desmos
-표현식의 의미를 평가하고 그래프 객체를 생성합니다. Geometry에서도 expression list와 token reference를 유지하여 객체를 이름 있는 수학 표현으로 다룹니다.
+표현을 많이 연결하기보다 한 수학 모델을 강하게 시각화합니다.
 
-### Polypad
-타일 유형, 위치, 회전, 뒤집기, 레이어, 라벨 등의 상태를 가진 가상 교구입니다. 스냅과 병합 옵션으로 조작물의 물성을 구현합니다.
+## 9. Undo/History 가치
 
-### PhET
-개별 개념의 법칙을 시뮬레이션 모델 자체에 내장합니다. 사용자는 식을 직접 명령하지 않아도 조절기·물체·수모형의 변화로 관계를 봅니다.
-
-### Graspable Math
-대수적으로 허용된 변환만 성공합니다. 허용되지 않는 제스처는 흔들림/원위치 같은 즉시 피드백으로 거절합니다.
-
-### MLC
-물리 교구의 조작 규칙을 디지털로 옮깁니다. 수직선 점프, 10진 블록, 분수막대, 지오보드 밴드 등 **표상 자체가 수학 모델**입니다.
-
-## 5. 표현 간 연결
-
-| 서비스 | 식 | 표 | 2D | 3D | 조작물 | 설명/문서 |
-|---|---|---|---|---|---|---|
-| 알지오 키즈 | 제한적/도구별 | 통계 | 강함 | 강함 | 일부 | 강함 |
-| GeoGebra | 매우 강함 | 강함 | 매우 강함 | 강함 | 제한적 | Notes |
-| Desmos | 매우 강함 | 강함 | 강함 | 별도 3D | 제한적 | Classroom |
-| Polypad | 대수 타일/식 | 차트 | 강함 | 전개/입체 타일 | 매우 강함 | 텍스트/그리기 |
-| PhET | 시뮬레이션별 | 시뮬레이션별 | 강함 | 시뮬레이션별 | 강함 | 활동지는 외부 |
-| Graspable Math | 매우 강함 | 낮음 | 그래프 연계 | 낮음 | 기호 자체 | 캔버스 |
-| MLC | 낮음 | Number Chart 등 | 강함 | 낮음 | 매우 강함 | Whiteboard |
-
-## 6. 저장·공유·수업
-
-| 서비스 | 개인 저장 | 링크/코드 공유 | 교사 과제/모니터링 | 로그인 없는 사용 |
-|---|---|---|---|---|
-| 알지오 키즈 | 내 문서/PC | 콘텐츠 중심 | 모둠·과제 | 세부 범위 별도 확인 |
-| GeoGebra | 계정/파일 | 강함 | Classroom | 계산기 자체 가능 |
-| Desmos | 그래프 저장/공유 | 링크 | Amplify Classroom | 계산기 가능 |
-| Polypad | 활동/임베드/직렬화 | 링크/활동 | Amplify Classroom 연계 | 가능 영역 있음 |
-| PhET | 개별 sim 다운로드 | URL/임베드 | 별도 LMS 조합 | 가능 |
-| Graspable Math | 저장/공유 | 지원 | Google Classroom 안내 | 범위 별도 확인 |
-| MLC | 작업 상태 공유 | 8자리 코드/링크 | 제출보다 공유 중심 | MultiApp 로그인 불필요 |
-
-## 7. 공개 기술 구조 신뢰도
-
-| 서비스 | 내부 구조 분석 가능성 |
+| 서비스 유형 | 이상적인 history 단위 |
 |---|---|
-| GeoGebra | **높음** — 현재 공개 monorepo |
-| Polypad | **중간~높음** — 공개 API가 상태 스키마와 이벤트를 상세히 노출 |
-| PhET | **중간** — 현재 개별 공개 repo는 유지 중단, 현행 monorepo는 비공개. 공식 문서에서 SceneryStack 확인 |
-| Graspable Math | **중간 이하** — 공식 UX 문서는 상세하지만 현행 전체 소스 확인 불가 |
-| Desmos | **중간 이하** — 공식 도움말은 풍부하나 핵심 엔진 소스 비공개 |
-| 알지오매스 키즈 | **중간 이하** — 사용자 매뉴얼은 매우 상세하나 내부 소스 비공개 |
-| MLC | **중간 이하** — 기능/공유 정책은 상세하나 내부 소스 비공개 |
+| 동적 기하 | create/transform/delete construction |
+| 가상교구 | add/move/merge/split tile |
+| 대수 | rewrite operation |
+| 데이터 | attribute/graph/filter operation |
+| 시뮬레이션 | 탐구 목적에 따라 selective history |
+| 수업 플랫폼 | 학생 response revision + teacher action |
 
-## 8. 신규 서비스 설계 시 가치 있는 결합
+UI 좌표 변화 자체보다 **수학적 의미가 있는 command**를 history로 남기는 편이 좋습니다.
 
-### 조합 A — 초등 탐구형
-- MLC의 낮은 진입장벽
-- Polypad의 통합 캔버스
-- 알지오 키즈의 교육과정 친화적 도구명
-- GeoGebra의 관계 기반 객체 모델
+## 10. 저장 상태를 나눠야 하는 이유
 
-### 조합 B — 수학 객체 편집기
-- GeoGebra의 dependency graph
-- Desmos의 expression/source-of-truth 패널
-- Polypad의 JSON 직렬화
-- 일반 그래픽 앱의 selection/history 패턴
+최소 다음을 분리하는 것이 좋습니다.
 
-### 조합 C — 대수 학습
-- Graspable Math의 legal transform engine
-- Desmos의 즉시 그래프
-- PhET의 원인-결과 시뮬레이션
-- 단계별 derivation history
+~~~text
+Document State
+Viewport State
+User Preference
+Session State
+Classroom State
+Analytics/History
+~~~
 
-## 9. 피해야 할 결합
+Polypad은 viewport를 document와 분리하고, CODAP은 persistent preference와 document history를 분리하는 좋은 사례입니다.
 
-기능을 많이 모으는 것 자체가 목표가 되면 다음 문제가 생깁니다.
+## 11. 초등용 신규 서비스 설계 조합
 
-- 도구 아이콘이 과도하게 늘어남
-- 초등학생이 수학 개념보다 메뉴 위치를 학습하게 됨
-- 같은 제스처가 영역마다 다른 의미를 갖게 됨
-- 문서/공유/과제 기능이 수학 작업 흐름을 끊음
-- 객체 상태와 화면 상태가 분리되지 않아 Undo/Redo가 불안정해짐
+### 수감각/연산
+- MLC의 수모형
+- Brainingcamp의 공통 shell
+- Didax의 단순함
+- Polypad의 serialization
 
-따라서 '모든 기능'보다 **일관된 수학 객체 모델 + 영역별 점진적 도구 공개**가 우선입니다.
+### 도형/공간
+- 알지오의 교육과정 친화 도구명
+- GeoGebra의 dependency
+- Cabri의 dynamic manipulation
+- PhET의 causal animation
+
+### 데이터/통계
+- CODAP의 shared dataset
+- attribute drag
+- linked table/graph
+- 실제 데이터 import
+
+### 수업 시스템
+- Amplify의 lesson screen
+- Brainingcamp LIVE의 실시간 관찰
+- 알지오 과제 template
+- 짧은 join/share code
+
+## 12. 가장 피해야 할 설계
+
+- 기능을 한 화면에 전부 노출
+- canvas shape와 math object를 동일시
+- 각 view가 자기 데이터를 따로 가짐
+- drag를 pixel movement로만 저장
+- Undo를 매 mousemove마다 기록
+- viewport와 document를 같은 상태로 저장
+- 수업 shell이 math engine 내부 구현에 강결합
+- 접근성을 개발 마지막에 추가
+- 비공개 서비스 내부 기술을 근거 없이 추정
+
+## 13. 분석 우선순위
+
+신규 서비스를 설계할 때 먼저 결정할 것:
+
+1. 핵심 수학 state는 무엇인가?
+2. 학생이 직접 만지는 representation은 무엇인가?
+3. gesture를 어떤 semantic operation으로 바꿀 것인가?
+4. 어떤 관계를 constraint로 강제할 것인가?
+5. 어떤 표현을 같은 identity로 연결할 것인가?
+6. history 단위는 무엇인가?
+7. document/share 포맷은 무엇인가?
+8. 교사 시스템과 math engine의 경계는 어디인가?
