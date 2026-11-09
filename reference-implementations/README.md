@@ -33,3 +33,17 @@ npm run check
 3. renderer와 domain model을 분리합니다.
 4. history는 semantic command 단위로 기록합니다.
 5. 공개 소스 분석 결과와 클린룸 구현을 혼동하지 않습니다.
+
+
+## 조합 예제
+
+`src/examples/`에는 공통 모듈을 실제 서비스 구조처럼 조합한 예제가 있습니다.
+
+- `dynamic-geometry-demo.ts` — GeoGebra/알지오/Cabri형 의존 작도
+- `manipulative-demo.ts` — Polypad/MLC/Brainingcamp/Didax형 교구
+- `algebra-rewrite-demo.ts` — Graspable Math형 대수 변환
+- `linked-data-demo.ts` — CODAP형 linked selection
+- `reactive-simulation-demo.ts` — PhET형 reactive domain state
+- `classroom-demo.ts` — Amplify/Brainingcamp LIVE형 수업 세션
+
+이 예제들은 특정 제품의 복제물이 아니라 각 아키텍처의 최소 동작 단위를 보여줍니다.
