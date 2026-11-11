@@ -16,6 +16,7 @@
 - `scene-graph.ts` — 장면 그래프/transform/renderer 분리
 - `linked-dataset.ts` — CODAP형 shared dataset + linked selection
 - `lesson-orchestrator.ts` — Amplify Classroom/Brainingcamp LIVE형 session
+- `solid-net-folding.ts` — Solid Figure를 일반화한 Face/Hinge 기반 전개도 접기 transform
 - `serialization.ts` — versioned document envelope/migration
 
 ## 사용
