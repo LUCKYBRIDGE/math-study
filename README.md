@@ -71,7 +71,19 @@ storytold/craft-anything의 Study → Build → Check 사고방식을 참고하�
 - Drag/Drop
 - 초등 수모형
 
-## C. 시뮬레이션·마이크로월드
+## C. 공간도형·전개도 시각화
+
+- [Solid Figure / 奇妙图形探险队](services/solid-figure/README.md)
+
+핵심:
+- Face / Edge / Vertex
+- Net / Hinge
+- Fold Transform
+- CSS 3D vs WebGL
+- 2D Net ↔ 3D Solid
+- Visibility / Occlusion
+
+## D. 시뮬레이션·마이크로월드
 
 - [PhET Math](services/phet/README.md)
 
@@ -82,7 +94,7 @@ storytold/craft-anything의 Study → Build → Check 사고방식을 참고하�
 - animation
 - multimodal feedback
 
-## D. 대수 직접조작
+## E. 대수 직접조작
 
 - [Graspable Math](services/graspable-math/README.md)
 
@@ -93,7 +105,7 @@ storytold/craft-anything의 Study → Build → Check 사고방식을 참고하�
 - Rewrite Rule
 - Derivation History
 
-## E. 데이터·통계 탐구
+## F. 데이터·통계 탐구
 
 - [CODAP](services/codap/README.md)
 
@@ -104,7 +116,7 @@ storytold/craft-anything의 Study → Build → Check 사고방식을 참고하�
 - Brushing and Linking
 - Plugin API
 
-## F. 수업 제작·실시간 오케스트레이션
+## G. 수업 제작·실시간 오케스트레이션
 
 - [Amplify Classroom](services/amplify-classroom/README.md)
 - 알지오 모둠
@@ -134,6 +146,7 @@ storytold/craft-anything의 Study → Build → Check 사고방식을 참고하�
 | Math Learning Center | 가상교구 | 핵심 비공개 | 물리교구 디지털화, short share code |
 | CODAP | 데이터/통계 | 높음 | Shared Dataset, Linked Views, Plugin |
 | Cabri Express | 동적 수학 | 핵심 비공개 | Geometry + Graph + 3D + Equation 통합 |
+| Solid Figure | 공간도형/전개도 코스웨어 | **높음** | React + CSS 3D 접기, 곡면 근사, 고정 topology |
 | Brainingcamp | 가상교구/수업 | 핵심 비공개 | Common Manipulative Shell + LIVE |
 | Amplify Classroom | 수업 플랫폼 | 핵심 비공개 | Lesson Screens + Teacher Orchestration |
 | Didax | micro manipulative | 핵심 비공개 | HTML5 단일 개념 교구 |
@@ -163,6 +176,7 @@ services/<service>/
 | Math Learning Center | [분류](services/math-learning-center/classification.md) | [구현](services/math-learning-center/implementation-reference.md) |
 | CODAP | [분류](services/codap/classification.md) | [구현](services/codap/implementation-reference.md) |
 | Cabri Express | [분류](services/cabri-express/classification.md) | [구현](services/cabri-express/implementation-reference.md) |
+| Solid Figure | [분류](services/solid-figure/classification.md) | [구현](services/solid-figure/implementation-reference.md) |
 | Brainingcamp | [분류](services/brainingcamp/classification.md) | [구현](services/brainingcamp/implementation-reference.md) |
 | Amplify Classroom | [분류](services/amplify-classroom/classification.md) | [구현](services/amplify-classroom/implementation-reference.md) |
 | Didax | [분류](services/didax/classification.md) | [구현](services/didax/implementation-reference.md) |
@@ -181,6 +195,7 @@ manipulative-registry.ts  # 교구 플러그인
 rewrite-engine.ts         # 대수식 변환
 reactive-property.ts      # 시뮬레이션 반응형 상태
 scene-graph.ts            # 2D/3D 장면 그래프
+solid-net-folding.ts      # Face/Hinge 기반 범용 전개도 접기
 linked-dataset.ts         # 통계 linked views
 lesson-orchestrator.ts    # 실시간 수업
 serialization.ts          # 버전/마이그레이션
@@ -213,6 +228,7 @@ Polypad         → Tile/Stroke Document
 PhET            → Simulation Domain Model
 Graspable Math  → Expression Tree + Rewrite
 CODAP           → Shared Dataset + Linked Views
+Solid Figure    → UI-local Fold/View State → 권장 Face/Hinge Graph
 Amplify         → Lesson Screen + Student Response
 ~~~
 
@@ -271,6 +287,7 @@ math-study/
 │  ├─ math-learning-center/
 │  ├─ codap/
 │  ├─ cabri-express/
+│  ├─ solid-figure/
 │  ├─ brainingcamp/
 │  ├─ amplify-classroom/
 │  ├─ didax/
@@ -286,6 +303,7 @@ math-study/
 │     ├─ rewrite-engine.ts
 │     ├─ reactive-property.ts
 │     ├─ scene-graph.ts
+│     ├─ solid-net-folding.ts
 │     ├─ linked-dataset.ts
 │     ├─ lesson-orchestrator.ts
 │     ├─ serialization.ts
