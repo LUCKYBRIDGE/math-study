@@ -325,6 +325,46 @@
 
 ---
 
+## 10. 공간도형·전개도 시각화형
+
+대표:
+- Solid Figure / 奇妙图形探险队
+- Shapes 3D 계열
+- 알지오매스 3D의 전개도 기능
+- GeoGebra 3D의 Net 기능
+
+핵심 모델:
+- solid
+- face / edge / vertex
+- net
+- hinge
+- fold angle
+- camera/view
+
+대표 UI:
+- 입체 선택
+- 3D 회전
+- 접기/펼치기 slider
+- 전개도
+- 면/모서리/꼭짓점 표시
+- 관찰 질문
+
+핵심 UX:
+- 입체와 전개도의 대응이 연속적으로 보이는가?
+- 면의 동일성이 접는 중간에도 유지되는가?
+- 학생이 임의의 전개도를 만들 수 있는가?
+- 가려진 면/모서리를 어떻게 표현하는가?
+- 곡면과 다면체를 같은 방식으로 억지로 처리하지 않는가?
+
+가져올 핵심:
+- Face/Hinge Graph
+- Fold Transform
+- 2D Net ↔ 3D Solid Identity
+- Camera/View State Separation
+- Geometry-aware Visibility
+
+---
+
 # 교차 분류
 
 서비스는 하나의 범주에만 들어가지 않습니다.
@@ -344,6 +384,7 @@
 | Amplify Classroom | 수업 오케스트레이션 | Desmos/Polypad 위젯 |
 | Didax | 가상교구 | 단일 개념 micro-tool |
 | Toy Theater | 가상교구 | 저학년 시각 UI |
+| Solid Figure | 공간도형·전개도 | CSS 3D 접기, 입체 인식, 퀴즈 |
 
 # 가장 중요한 구분
 
