@@ -13,6 +13,7 @@
 | Math Learning Center | semantic manipulative objects + short share | manipulative-registry, tile-document, serialization |
 | CODAP | shared dataset + linked selection + renderer adapters | linked-dataset, history |
 | Cabri Express | construction graph + shared symbol environment | dependency-graph, scene-graph |
+| Solid Figure | face/hinge graph + fold transform + renderer adapter | solid-net-folding, scene-graph, serialization |
 | Brainingcamp | common manipulative shell + Canvas + LIVE | manipulative-registry, tile-document, lesson-orchestrator |
 | Amplify Classroom | lesson screen registry + response/pacing | lesson-orchestrator, serialization |
 | Didax | small single-purpose microtool SDK | manipulative-registry, history |
@@ -35,6 +36,7 @@ reference-implementations/
    ├─ scene-graph.ts
    ├─ linked-dataset.ts
    ├─ lesson-orchestrator.ts
+   ├─ solid-net-folding.ts
    └─ serialization.ts
 ~~~
 
@@ -73,5 +75,6 @@ services/<service>/
 - Amplify Classroom
 - Didax
 - Toy Theater
+- Solid Figure는 예외적으로 핵심 소스가 공개되어 실제 구현까지 분석 가능
 
 이 경우 실제 내부 class/file 이름을 상상해서 쓰지 않고, 확인된 행동을 독립적인 코드 구조로 재구현합니다.
