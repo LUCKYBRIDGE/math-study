@@ -13,6 +13,7 @@
 | Math Learning Center | elementary manipulative | manipulative-first | manipulative state | web workspace | share 중심 | UI 중심 | manipulative registry |
 | CODAP | data exploration | attribute-drag | shared dataset + tiles + history | DOM/D3/Pixi/Leaflet | data activity | 매우 높음 | linked dataset + history |
 | Cabri Express | dynamic math toolkit | construction-first | dynamic construction graph | 2D/3D/graph | LMS embed | UI 중심 | dependency graph |
+| Solid Figure | guided solid-figure courseware | content → slider/drag | UI-local fold/view state | DOM + CSS 3D | 없음 | **공개 소스 높음** | face/hinge folding model |
 | Brainingcamp | manipulative suite | toolkit/bin → workspace | manipulative document | Canvas workspace | LIVE | 중간 | registry + live session |
 | Amplify Classroom | lesson orchestration | screen-first | lesson + response + session | web widgets | 핵심 | UI/System | lesson orchestrator |
 | Didax | single-purpose manipulatives | direct manipulation | microtool state | HTML5 web | 없음/외부 | 기술 일부 확인 | microtool shell |
@@ -58,3 +59,7 @@ construction, graph, equation, 3D를 하나의 동적 수학 환경으로 어떻
 
 ### Toy Theater
 기능을 줄이고 visual affordance를 강화해 저학년의 조작 학습비용을 어떻게 낮추는가?
+
+
+### Solid Figure / 奇妙图形探险队
+고정된 몇 개 입체를 CSS 3D로 접고 펼치는 구조가 왜 저비용 코스웨어에 효과적이며, 임의 전개도·정확한 topology·hidden edge로 확장할 때 어떤 domain model이 추가로 필요한가?
