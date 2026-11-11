@@ -16,8 +16,8 @@
 | Classroom Layer | 없음 |
 | Backend | 없음 |
 | AI | 실제 생성형 AI 호출 없음; 정적 문제/수수께끼 pool |
-| Source Visibility | **높음 — 공개 TypeScript/React 저장소** |
-| Reimplementation Confidence | 매우 높음 |
+| Source Visibility | 공개 TypeScript/React 저장소 후보 확인; live 배포와 직접 연결은 미검증 |
+| Reimplementation Confidence | 코드 구조 분석은 매우 높음 / live 배포 동일성은 중간~높음 |
 | Clean-room Code Mapping | solid-net-folding.ts, scene-graph.ts, serialization.ts |
 
 ## 제품 유형
