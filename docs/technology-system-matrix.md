@@ -14,6 +14,7 @@
 | Brainingcamp | 핵심 비공개 | 공식 2026 ACR에서 Canvas-based workspace 확인 | manipulative workspace | manipulative/toolkit |
 | Didax | 핵심 비공개 | HTML5 + JavaScript 공식 FAQ | 개별 manipulative state | 앱별 |
 | Cabri Express | 핵심 비공개 | 브라우저 기반, scientific/graphical/3D/equation/dynamic geometry | dynamic math object 추정 | 통합 toolkit |
+| Solid Figure | **높음** | React 19, TypeScript, Vite, Tailwind CDN, CSS 3D transform | UI-local fold/view state | fixed-shape component 추가 |
 | Amplify Classroom | 핵심 비공개 | 웹 lesson builder + teacher dashboard | lesson screen + student response | screen/widget |
 | MLC | 핵심 비공개 | web apps/MultiApp | manipulative objects | manipulative module |
 
@@ -111,6 +112,24 @@ Amplify Classroom.
 - 접근성 구조
 - 간단한 도형
 - 개별 객체 hit target
+
+### CSS 3D가 유리한 경우
+- 고정된 소수의 입체
+- 면이 단순한 정육면체/직육면체
+- 가벼운 접기/펼치기 설명
+- DOM label과 3D face를 함께 써야 하는 경우
+
+Solid Figure는 Three.js 없이 CSS perspective + preserve-3d + rotateX/Y/Z로 입체를 구성합니다.
+
+장점:
+- 구현량이 작음
+- React DOM과 직접 결합
+- 초등용 고정 코스웨어에 충분
+
+한계:
+- 일반 mesh/topology가 없음
+- 정확한 occlusion/hidden edge/picking에 약함
+- 임의 전개도 확장이 어려움
 
 ### Canvas가 유리한 경우
 - 많은 조작물
