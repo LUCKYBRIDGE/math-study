@@ -15,6 +15,7 @@
 | MLC | manipulative model | 수모형 |
 | CODAP | dataset/case/attribute | 데이터/변수 |
 | Cabri Express | dynamic construction | 도형/식/그래프 |
+| Solid Figure | 고정 fold/view state; 권장 face/hinge graph | 입체/전개도/slider |
 | Brainingcamp | manipulative workspace | 교구 객체 |
 | Amplify Classroom | lesson screen/response | 수업 화면/응답 |
 | Didax | single manipulative state | 단일 교구 |
@@ -33,6 +34,7 @@
 | MLC | 수모형 직접조작 |
 | CODAP | attribute drag → 표현 구성 |
 | Cabri | construction → direct manipulation |
+| Solid Figure | shape select → fold slider → 3D drag → observe |
 | Brainingcamp | toolkit/bin → workspace |
 | Amplify | screen → student response → teacher orchestration |
 | Didax | 교구 선택 → 즉시 조작 |
@@ -51,6 +53,7 @@
 | MLC | 수모형 |
 | CODAP | table, graph, map, card |
 | Cabri | 기하, 그래프, 3D, 식 |
+| Solid Figure | CSS 3D 입체, 전개도, 접기 animation, quiz |
 | Brainingcamp | 교구 + 주석 |
 | Amplify | lesson screen + embedded math widget |
 | Didax | 개별 교구 |
@@ -68,6 +71,7 @@
 | Brainingcamp | 비공개 | 중간 이하 |
 | Didax | 비공개 | 중간 이하 |
 | Cabri | 비공개 | 중간 이하 |
+| Solid Figure | **공개** | **높음 — 전체 소형 앱 구조 분석 가능** |
 | MLC | 비공개 | 중간 이하 |
 | Graspable | 비공개 | 중간 이하 |
 | Amplify | 비공개 | UI/System 중심 |
@@ -85,6 +89,7 @@
 | Brainingcamp | Canvas-based workspace |
 | Didax | HTML5 + JavaScript |
 | Cabri Express | browser based, 2D/3D/graph/equation integrated |
+| Solid Figure | React 19, TypeScript, Vite, CSS 3D transform, Tailwind Play CDN |
 | 나머지 | 공개 근거 범위까지만 기록 |
 
 ## 6. 화면 복잡도와 진입장벽
@@ -100,6 +105,7 @@
 | 알지오 | 중간 | 중간~높음 |
 | Amplify | 학생 낮음 / 교사 중간 | 높음 |
 | Cabri | 중간 | 중간 |
+| Solid Figure | 낮음 | 높음 |
 | Desmos | 중간 | 중간 이하 |
 | GeoGebra Classic | 높음 | 낮음 |
 | Graspable | 중간 | 중간 이하 |
@@ -109,7 +115,7 @@
 
 ~~~text
 개방형 탐구
-Polypad ─ GeoGebra ─ CODAP ─ PhET ─ MLC/Brainingcamp ─ Graspable ─ 연습 플랫폼
+Polypad ─ GeoGebra ─ CODAP ─ PhET ─ Solid Figure ─ MLC/Brainingcamp ─ Graspable ─ 연습 플랫폼
                                                               정답 지향
 ~~~
 
@@ -129,6 +135,7 @@ Polypad ─ GeoGebra ─ CODAP ─ PhET ─ MLC/Brainingcamp ─ Graspable ─ �
 - Cabri
 - Polypad
 - PhET
+- Solid Figure — 2D 전개도와 3D 접기 연결은 강하지만 대상 도형이 고정
 
 다중 표현을 제공하지만 서비스/활동에 따라 연결 강도가 달라집니다.
 
@@ -177,6 +184,7 @@ Polypad은 viewport를 document와 분리하고, CODAP은 persistent preference�
 - Polypad의 serialization
 
 ### 도형/공간
+- Solid Figure의 낮은 비용 CSS 3D 설명형 접기
 - 알지오의 교육과정 친화 도구명
 - GeoGebra의 dependency
 - Cabri의 dynamic manipulation
