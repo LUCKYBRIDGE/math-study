@@ -1,10 +1,10 @@
 # Solid Figure / 奇妙图形探险队 정밀 분석
 
 - 서비스: https://solid-figure.pages.dev/
-- 공개 저장소: terry197808/solid-figure
+- 대응 공개 저장소 후보: terry197808/solid-figure
 - 제품 성격: **초등 입체도형 인식 + 전개/접기 시각화 + 퀴즈 코스웨어**
 - 대상 표기: 중국 초등 1학년 상권
-- 소스 공개성: **[VERIFIED-SOURCE] 공개 TypeScript/React**
+- 소스 공개성: **[VERIFIED-SOURCE] 코드 자체는 공개** / **[UNKNOWN] live Cloudflare Pages 배포와 저장소의 직접 연결은 metadata에서 확인되지 않음**
 - 조사 기준: 2026-11
 
 ## 1. 한 문장 평가
