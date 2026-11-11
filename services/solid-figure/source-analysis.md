@@ -1,5 +1,20 @@
 # Solid Figure 실제 소스 코드 분석
 
+## 0. 소스-배포 대응 신뢰도
+
+GitHub에서 terry197808/solid-figure 공개 저장소를 확인했습니다.
+
+- 저장소명: solid-figure
+- description: Math solid figure
+- 앱 내부 title/metadata: 奇妙图形探险队 / Shape Explorers
+- 기술/화면 구조가 분석 대상 서비스와 강하게 대응
+
+다만 저장소 metadata의 homepage는 비어 있고, Cloudflare Pages 배포 설정 파일도 repository tree에서 직접 확인되지 않았습니다.
+
+따라서 아래 파일 분석은 **공개 저장소 코드에 대해서는 VERIFIED-SOURCE**이지만, 해당 commit이 현재 solid-figure.pages.dev에 그대로 배포된 build라고 단정하지 않습니다.
+
+---
+
 ## 1. 기술 개요
 
 package.json:
